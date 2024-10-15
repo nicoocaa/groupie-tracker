@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+*{
+    font-family: "Josefin Sans";
+    scrollbar-width: none;
+}
+
+header {
+    background-image: url(../img/header.jpg);
+    background-position: 80%;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    width: 100%;
+    color: #FFF;
+    font-family: "Josefin Sans";
+    font-size: 30px;
+    font-weight: 400;
+}
+
+header #img {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin-left: 97%;
+    margin-right: 40px;
+    position: absolute;
+}
+
+header #img img {
+    width: 30px; 
+    height: 30px;
+}
+
+#top {
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#top ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+    margin-left: 60px;
+}
+
+li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+li {
+    color: #FFF;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Josefin Sans";
+    font-size: 25px;
+    font-weight: 400;
+    margin-right: 150px;
+}
+
+li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 1000px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s ease-out;
+}
+
+li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#top li:last-child {
+    margin-right: 0%;
+    border-right: none;
+}
+
+body {
+    margin: 0px;
+    color: aliceblue;
+    background-color: #1C1C1C;
+}
+
+.artists-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.artist-container {
+    margin: 20px;
+    background-color: rgb(255, 255, 255 , 0.04 );   
+    border-radius: 50px 15px 15px 50px;
+    display: flex;
+    width: 35%;
+    height: fit-content;
+    align-items: center;
+}
+
+.artist-container.filtered {
+    display: none;
+}
+
+.artist-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.artist-text p {
+    line-height: 23px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+.artist-text h1 {
+    margin: auto;
+    margin-top: 5px;
+}
+
+.artist-text p1 {
+    display: none;
+}
+
+.artist-text p2 {
+    display: none;
+}
+
+.artist-text p3 {
+    display: none;
+}
+
+.artist-text p4 {
+    display: none;
+}
+
+.artist-text p5 {
+    display: none;
+}
+
+.artist-text p6 {
+    display: none;
+}
+
+.imageArtist img {
+    width: 200px;
+    border-radius: 50px
+}
+
+.imageArtist {
+    width: fit-content;
+    height: 200px;
+}
+ 
+.button {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #4C02AF;
+    color: white;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 34px;
+    z-index: 1;
+    transition: color 0.5s;
+}
+  
+.button:hover {
+    color:#4C02AF ;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 120%;
+    height: 220%;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+.button:hover:before {
+    top: -50%;
+    left: -10%;
+}
+
+.searchAlphabet {
+    font-family: Roboto,Tahoma,"sans-serif";
+    font-size: 23px;
+    font-weight: 500;
+    max-width: 970px;
+    min-width: 700px;
+    margin: auto;
+    display: flex;
+    margin-bottom: 45px;
+    justify-content: space-around;
+    color: #949494;
+}
+
+.searchAlphabet span {
+    cursor: pointer;
+}
+
+.headerSearch {
+    background-color: aliceblue;
+    color: black;
+    margin: 0%;
+    padding: auto;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 9px;
+}
+
+.headerSearch p {
+    font-size: 29px;
+    margin: 0%;
+}
+
+.search-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #949494;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 50px auto;
+    margin-bottom: 45px;
+    gap: 12px;
+    cursor: pointer;
+    transition: width 500ms cubic-bezier(0.68, -0.55, 0.8, 1.55);
+    overflow: hidden;
+}
+
+.search-container.active {
+    width: 550px;
+    cursor: default;
+    background-color: aliceblue;
+}
+ 
+.search-container i img{
+    width: 25px;
+    margin-top: 4px;
+    height: 25px;
+}
+
+.search-container.active i img{
+    width: 25px;
+    margin-top: 0px;
+    height: 25px;
+}
+  
+.search-input {
+    display: none;
+    outline: none;
+    border: none;
+    width: 450px;
+    font-family: "Roboto";
+    font-size: 18px;
+    background-color: transparent;
+}
+
+i.fa-times {
+    display: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.search-container.active > :is(i, input) {
+    display: flex;
+}
+
+.toggleButton{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+.toggleButton label{
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.toggle {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+    transition: ease 0.3s;
+	-webkit-transition: ease 0.3s;
+	-moz-transition: ease 0.3s;
+	-o-transition: ease 0.3s;
+}
+
+.toggle:after {
+	content: '';
+	width: 42px;
+	height: 20px;
+	display: inline-block;
+	background: rgba(196, 195, 195, 0.55);
+	border-radius: 18px;
+	clear: both;
+    transition: ease 0.3s;
+	-webkit-transition: ease 0.3s;
+	-moz-transition: ease 0.3s;
+	-o-transition: ease 0.3s;
+}
+
+.toggle:before {
+	content: '';
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: px;
+	border-radius: 50%;
+	background: rgb(255, 255, 255);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    transition: ease 0.3s;
+	-webkit-transition: ease 0.3s;
+	-moz-transition: ease 0.3s;
+	-o-transition: ease 0.3s;
+}
+
+.toggle:checked:before {
+	left: 22px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.6);
+    transition: ease 0.3s;
+	-webkit-transition: ease 0.3s;
+	-moz-transition: ease 0.3s;
+	-o-transition: ease 0.3s;
+}
+
+.toggle:checked:after {
+    background: #4C02AF;
+    transition: ease 0.3s;
+	-webkit-transition: ease 0.3s;
+	-moz-transition: ease 0.3s;
+	-o-transition: ease 0.3s;
+}
+
+.checkboxfilter{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-bottom: 25px;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 2%;
+}
+
+.selectOrder {
+    border-radius: 6px;
+    width: 260px;
+    height: 30px;
+    color: #FFF;
+    font-size: 16px;
+    background-color: #4d02af;
+}
+
+.selectOrder option {
+    background-color: aliceblue;
+    color: black;
+    font-size: 14px;
+}

@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+*{
+    font-family: "Josefin Sans";
+    scrollbar-width: none;
+}
+
+header {
+    background-image: url(../img/header.jpg);
+    background-position: 80%;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+   
+    position: relative;
+}
+
+header h1 {
+    width: 100%;
+    color: #FFF;
+    font-family: "Josefin Sans";
+    font-size: 30px;
+    font-weight: 400;
+}
+
+header #img {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin-left: 97%;
+    margin-right: 40px;
+    position: absolute;
+}
+
+header #img img {
+    width: 30px; 
+    height: 30px;
+}
+
+#top {
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#top ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+    margin-left: 60px;
+}
+
+li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+li {
+    color: #FFF;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Josefin Sans";
+    font-size: 25px;
+    font-weight: 400;
+    margin-right: 150px;
+}
+
+li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 1000px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s ease-out;
+}
+
+li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#top li:last-child {
+    margin-right: 0%;
+    border-right: none;
+}
+
+body {
+    margin: 0px;
+    color: aliceblue;
+    background-color: #1C1C1C;
+}
+
+#containerheadartiste{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center; 
+    align-items: center;
+}
+
+#containerheadartiste img {
+    display: flex;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 450px;
+}
+
+.namehead {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(7px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.namehead h1{
+    width:max-content;
+    height: 120px;
+    color: aliceblue;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.784);
+    font-family: "Josefin Sans";
+    font-size: 120px;
+    font-weight: 600;
+}
+
+#containerDescriptionArtiste{
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 76%;
+    height: 630px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.memberGroup{
+    width: 300px;
+    height: 420px;
+    text-align: center;
+}
+
+.memberGroup p{
+    font-size: 21px;
+    padding-left: 30px;
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 28px;
+}
+
+.memberGroup ul{
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 42px;
+}
+
+.infoGroup{
+    width: 37%;
+    height: 560px;
+    border-right: 1px solid rgb(255, 255, 255);
+    padding-top: 7px;
+    padding-left: 5%;
+    padding-right: 0px;
+}
+
+.suppGroup {
+    width: fit-content ;
+}
+
+.suppGroup p {
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 20px;
+    padding-left: 30px;
+    padding-right: 0px;
+    width: fit-content;
+}
+
+.moreInfo {
+    max-width: 63%;
+    min-width: 63%;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.praticInfo {
+    width: 590px;
+    height: 180px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    margin-bottom: 140px;
+}
+
+.praticInfo p1 {
+    font-size: 20px;
+    width: 310px;
+    margin-left: 60px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.praticInfo p2 {
+    font-size: 16px;
+    padding-left: 60px;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 45px;
+    padding-top: 20px;
+}
+
+.imgInfo {
+    text-align: left;
+    margin: 0px 20px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.imgInfo img {
+    width: 30px;
+    height: 30px;
+}
+
+.imgPlay {
+    width: 120px;
+    border-radius: 60px;
+    box-shadow: 0 0 10px black;
+}
+
+.card p {
+    display: none;
+}
+
+.location {
+    margin:50px auto;
+    border: 4px dashed aliceblue;
+    width: 76%;
+    text-align: center;
+    background-color: rgb(255, 255, 255 , 0.04 );  
+}
+
+.player {
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.info {
+    position: absolute;
+    height: 100px;
+    top: 0;
+    opacity: 0;
+    left: 10px;
+    right: 10px;
+    background-color: #4C02AF;
+    padding: 5px 15px 5px 175px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.info .artist, .info .name {
+    display: block;
+}
+
+.info .artist {
+    color: aliceblue;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.info .name {
+    color: #b2b2b2;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.info .progress-bar {
+    background-color: #ddd;
+    height: 2px;
+    width: 100%;
+    position: relative;
+}
+
+.info .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: red;
+    width: 0%;
+}
+
+.info .fill-animation {
+    animation: fill-progress 31s linear forwards;
+}
+
+@keyframes fill-progress {
+    0% {
+        width: 0%;
+   }
+    100% {
+        width: 100%;
+   }
+}
+
+.info.active {
+    top: -65px;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.control-panel {
+    position: relative;
+    background-color: #fff;
+    border-radius: 30px;
+    width: 500px;
+    height: 100px;
+    z-index: 5;
+    box-shadow: 0px 10px 30px 5px rgba(98, 98, 98, 0.5);
+}
+
+.control-panel.active {
+    box-shadow: 0px 10px 30px 5px rgba(98, 98, 98, 0.9);
+    transition: all 0.5s ease;
+}
+
+.control-panel .album-art {
+    position: absolute;
+    left: 40px;
+    top: -35px;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.control-panel .album-art::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.control-panel .album-art::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+.control-panel.active .album-art {
+    animation: rotation 4s infinite linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(360deg);
+   }
+}
+
+.control-panel .controls {
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    padding: 0 15px;
+}
+
+.control-panel .controls .card {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin: 5px 0;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+}
+
+.control-panel .controls .prev, .control-panel .controls .next {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin: 5px 0;
+    opacity: 40%;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+}
+
+.control-panel .controls .card:hover {
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+}
+
+.control-panel .controls .prev {
+    background-image: url(../img/precedent.png);
+}
+.control-panel .controls .card {
+    background-image: url(../img/bouton-jouer.png);
+}
+.control-panel .controls .next {
+    background-image:  url(../img/bouton-suivant.png);
+}
+.control-panel.active .controls .card {
+    background-image:  url(../img/bouton-pause.png);
+}
+
+.map-iframe {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.titleConcert {
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+    justify-content: right;
+    text-align: right;
+    margin-top: 35px;
+    line-height: 28px;
+}
+
+.titleConcert p {
+    margin: 0;
+    width: 400px;
+    text-align: center;
+}
+
+.titleConcert p1 {
+    margin: 0;
+    width: 120px;
+    text-align: center;
+}
+
+.imgTicket {
+    margin: 100px;
+}
+
+.imgTicket img{
+    width: 300px;
+}
+
+.containerInfoConcert {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: right;
+    width: 100%;
+}
+
+.infoConcert{
+    width: 100%;
+    margin-right: 6%;
+    font-size: 22px;
+    line-height: 60px;
+}
+
+.infoConcert .locationConcert {
+    font-family: "Josefin Sans";
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    margin-right: 30px;
+}
+
+.infoConcert .dateConcert {
+    font-family: "Roboto"; 
+    letter-spacing: 1px;
+}
+

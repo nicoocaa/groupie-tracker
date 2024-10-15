@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/artist-list.css">
+    <link rel="icon" href="/assets/img/C.png" type="image/x-icon">
+    <title>Liste des artistes</title>
+</head>
+<body onload="focusOnSearchBar()">
+    <header>
+        <h1>Les<br>Cramptons</h1>
+        <div id="img">
+            <a href="/artist-list?focus=true"><img src="../../../assets/img/loupe.png"></a>
+        </div>
+    </header>
+
+    <div id="top">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/artist-list">Artistes</a></li>
+            <li><a href="/informations">Informations</a></li>
+        </ul>
+    </div>
+
+    <div class="headerSearch">
+        <p>TOUS LES ARTISTES</p>
+    </div>
+
+    <div class="dropdown">
+        <select name="selectOrderDisplay" id="Order-select" class="selectOrder">
+            <option value="displayAlphabet" >Par ordre alphabétique</option>
+            <option value="displayDownDateCreation" >Par date de création (plus récent au plus ancien)</option>
+            <option value="displayGrowDateCreation" >Par date de création (plus ancien au plus récent)</option>
+            <option value="displayDownDateAlbum" >Par date du premier album (plus récent au plus ancien)</option>
+            <option value="displayGrowDateAlbum" >Par date du premier album (plus ancien au plus récent)</option>
+            <option value="displayMemberNumber" >Par nombre de membres (croissant)</option>
+        </select>
+    </div>
+
+    <div class="search-container" method="GET">
+        <i class="fa fa-search">
+            <img src="../../../assets/img/loupe (1).png">
+        </i>
+        <input class="search-input"  type="text" placeholder="Rechercher un artiste.." name="recherche">
+        <i class="fa fa-times"><img src="../../../assets/img/signe-de-la-croix.png"></i>
+    </div>
+
+    <div class="checkboxfilter">
+        <div class="toggleButton">
+            <input type="checkbox" name="my-checkbox" id="checkbox" class="toggle" />
+            <label for="checkbox">Recherche par membre</label>
+        </div>
+
+        <div class="toggleButton">
+            <input type="checkbox" name="my-checkbox2" id="checkbox2" class="toggle" />
+            <label for="checkbox2">Recherche par date de création</label>
+        </div>
+
+        <div class="toggleButton">
+            <input type="checkbox" name="my-checkbox" id="checkbox3" class="toggle" />
+            <label for="checkbox3">Recherche par date du premier album</label>
+        </div>
+
+        <div class="toggleButton">
+            <input type="checkbox" name="my-checkbox" id="checkbox4" class="toggle" />
+            <label for="checkbox4">Recherche par emplacements</label>
+        </div>
+    </div>
+
+    <div class="searchAlphabet">
+        <span>#</span>
+        <span>A</span> 
+        <span>B</span> 
+        <span>C</span> 
+        <span>D</span> 
+        <span>E</span> 
+        <span>F</span> 
+        <span>G</span> 
+        <span>H</span> 
+        <span>I</span> 
+        <span>J</span> 
+        <span>K</span> 
+        <span>L</span> 
+        <span>M</span> 
+        <span>N</span> 
+        <span>O</span> 
+        <span>P</span> 
+        <span>Q</span> 
+        <span>R</span> 
+        <span>S</span> 
+        <span>T</span> 
+        <span>U</span> 
+        <span>V</span> 
+        <span>W</span> 
+        <span>X</span> 
+        <span>Y</span> 
+        <span>Z</span>
+    </div>
+
+    <div class="artists-list">
+        {{range .}}
+            <div class="artist-container">
+                <a href="/artists/{{.Artist.ID}}" class="imageArtist">
+                    <img src="{{.Artist.ImageURL}}" alt="Image de {{.Artist.Name}}">
+                </a>
+                <div class="artist-text">
+                    <p1> {{range .Artist.Members}}{{.}} {{end}}</p1>
+                    <p2>{{.Artist.NumMembers}}</p2>
+                    <p3>{{.Artist.CreationDate}}</p3>
+                    <p4>{{.Artist.FirstAlbumUnix}}</p4>
+                    <p5>{{.Artist.FirstAlbum}}</p5>
+                    <p6>{{range $key, $value := .Location.DatesLocations}}<li>{{$key}}</li>{{end}}</p6>
+                    <h1>{{.Artist.Name}}</h1>
+                    <p>Date de création: {{.Artist.CreationDate}}<br>
+                    Premier album: {{.Artist.FirstAlbum}}</p> 
+                    <a href="/artists/{{.Artist.ID}}" class="button">⟶</a>
+                </div>
+            </div>
+        {{end}}
+    </div>
+
+    <script src="../../../assets/js/search.js"></script>
+    
+</body>
+</html>

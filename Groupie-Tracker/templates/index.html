@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="icon" href="/assets/img/C.png" type="image/x-icon">
+    <title>Accueil</title>
+</head>
+
+<header>
+    <h1>Les<br>Cramptons</h1>
+    <div id="img">
+        <a href="/artist-list?focus=true"><img src="../../../assets/img/loupe.png"></a>
+    </div>
+</header>
+
+<body>
+    <script src="../../../assets/js/boutton.js"></script>
+    <div id="top">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/artist-list">Artistes</a></li>
+            <li><a href="/informations">Informations</a></li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <div class="wall">
+            <div class="slider">
+                <div class="slider-viewport">
+                    <div id="img1">
+                        <div id="img2">
+                            <div id="img3">
+                                <div id="img4">
+                                    <div id="img5">
+                                        <div class="slider-content">
+                                            {{range .Artists}}
+                                            <div class="slide">
+                                                <div class="image">
+                                                    <a href="/artists/{{.ID}}">
+                                                        <img src="{{.ImageURL}}" alt="Image de {{.Name}}" class="image">
+                                                    </a>
+                                                </div>
+                                                <div class="centered"><p>{{.Name}}</p></div>
+                                            </div>
+                                            {{end}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../../assets/img/previous.png" class="prev-btn" onclick="prevSlide()" alt="Image précédente">
+                <img src="../../../assets/img/play.png" class="play-btn" onmouseover="playMusic()" onmouseout="pauseMusic()">
+                <img src="../../../assets/img/next.png" class="next-btn" onclick="nextSlide()" alt="Image suivante">
+            </div>
+        </div>
+
+        <div class="text">
+            <h1>Découvrez nos artistes</h1>
+            <p>Les Cramptons est une plateforme musicale innovante qui vous permet d'explorer et de découvrir 
+                une vaste bibliothèque d'artistes provenant du monde entier.</p>
+            <p>Grâce à notre intégration d'une API musicale de pointe, nous offrons à nos utilisateurs un accès 
+                instantané à des albums et des artistes, le tout à portée de clic.</p>
+            <p>Peu importe le style que vous écoutez, que ce soit du rock classique, du jazz contemporain, 
+                de la musique électronique ou du hip-hop underground, vous trouverez votre bonheur parmi 
+                notre diversité musicale allant des classiques intemporels aux derniers hits, 
+                en passant par des découvertes de talents émergents. </p>
+            <p>Notre système de recherche vous permet de trouver rapidement des noms d'artistes ou des membres spécifiques, 
+                vous donnant ainsi la liberté d'explorer votre propre univers musical.</p>
+        </div>
+    </div>
+
+    <div class="partner">
+        <h1>Venez découvrir nos partenaires </h1>
+        <p>Nous travaillons et entretenons des relations et partenariats avec des géants de l'industrie de la musique</p>
+        <div class="wrapper">
+            <div class="container">
+                <img src="../../../assets/img/apple.png" class="logo">
+                <img src="../../../assets/img/deezer.png" class="logo">
+                <img src="../../../assets/img/sony.png" class="logo">
+                <img src="../../../assets/img/warner.png" class="logo">
+                <img src="../../../assets/img/universal.png" class="logo">
+                <img src="../../../assets/img/spotify.png" class="logo">
+                <img src="../../../assets/img/apple.png" class="logo">
+                <img src="../../../assets/img/deezer.png" class="logo">
+                <img src="../../../assets/img/sony.png" class="logo">
+                <img src="../../../assets/img/warner.png" class="logo">
+                <img src="../../../assets/img/universal.png" class="logo">
+                <img src="../../../assets/img/spotify.png" class="logo">
+                <img src="../../../assets/img/apple.png" class="logo">
+                <img src="../../../assets/img/deezer.png" class="logo">
+                <img src="../../../assets/img/sony.png" class="logo">
+                <img src="../../../assets/img/warner.png" class="logo">
+                <img src="../../../assets/img/universal.png" class="logo">
+                <img src="../../../assets/img/spotify.png" class="logo">
+                <img src="../../../assets/img/apple.png" class="logo">
+                <img src="../../../assets/img/deezer.png" class="logo">
+                <img src="../../../assets/img/sony.png" class="logo">
+                <img src="../../../assets/img/warner.png" class="logo">
+                <img src="../../../assets/img/universal.png" class="logo">
+                <img src="../../../assets/img/spotify.png" class="logo">
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="../../../assets/js/slide-music.js"></script>
+    <script src="../../../assets/js/boutton.js"></script>
+
+</body>
+
+</html>

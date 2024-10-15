@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/artists.css">
+    <link rel="icon" href="/assets/img/C.png" type="image/x-icon">
+    <title>Informations sur l'artiste</title>
+</head>
+
+<body>
+    <header>
+        <h1>Les<br>Cramptons</h1>
+        <div id="img">
+            <a href="/artist-list?focus=true"><img src="../../../assets/img/loupe.png"></a>
+        </div>
+    </header>
+    
+    <div id="top">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/artist-list">Artistes</a></li>
+            <li><a href="/informations">Informations</a></li>
+        </ul>
+    </div>
+
+    <div id="containerheadartiste">
+        <img src="{{.Artist.ImageURL}}" alt="{{.Artist.Name}}">
+        <div class="namehead">
+            <h1>{{.Artist.Name}}</h1>
+        </div>
+    </div>
+
+    <div id="containerDescriptionArtiste">
+        <div class="infoGroup">
+            <div class="memberGroup">
+                <p>Membres du groupe : </p>
+                <ul> {{range .Artist.Members}}{{.}} 
+                    <br>
+                    {{end}}
+                </ul>
+            </div>
+            <div class="suppGroup">
+                <p>Date de création : {{.Artist.CreationDate}}</p>
+                <p>Premier album : {{.Artist.FirstAlbum}}</p>
+            </div>
+        </div>
+        <div class="moreInfo">
+            <div class="praticInfo">
+                <div class="imgInfo">
+                    <img src="../../../assets/img/info.png">
+                </div>
+                <p1>INFORMATIONS PRATIQUES</p1>
+                <p2>Placement : Assis numéroté <br>
+                    L’accès au site et/ou aux places numérotées n’est pas garanti après l’heure du début du concert.
+                </p2>
+            </div>
+            <div class="player">
+                <div id="info" class="info">
+                    <span class="artist">{{.Artist.Name}}</span>
+                    <span class="name">Tendance n°1</span>
+                    <div class="progress-bar">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div id="control-panel" class="control-panel">
+                    <div class="album-art">
+                        <img src="{{.Artist.ImageURL}}" alt="{{.Artist.Name}}" class="imgPlay">
+                    </div>
+                    <div class="controls">
+                        <div class="prev"></div>
+                        <div id="card" class="card" onclick="toggleMusic(this)">
+                            <p>{{.Artist.Name}}</p>
+                        </div>
+                        <div class="next"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerlocation">
+        <div class="location">
+            <div class="containerInfoConcert">
+                <div class="infoConcert">
+                    <div class="titleConcert"><p>Lieux</p> <p1>Dates</p1></div>
+                    <p> 
+                        {{range $locations, $date := .Location.DatesLocations}}
+                        <span class="relationConcertInfo">
+                            <span class="locationConcert">{{$locations}} :</span> <!-- Classe pour le lieu -->
+                            {{range $index, $date := $date}}
+                                <span class="dateConcert">{{$date}}</span> <!-- Classe pour la date -->
+                                <br>
+                            {{end}}
+                        </span>
+                        {{end}}
+                    </p>
+                </div>
+                
+        
+                <div class="imgTicket">
+                    <img src="../../../assets/img/concert.png">
+                </div>
+            </div>         
+
+            <div class="map-container">
+                {{range $locations, $date := .Location.DatesLocations}}
+                <iframe class="map-iframe" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q={{$locations}}+(My%20Business%20Name)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/music.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../../../assets/js/map.js"></script>
+</body>
+
+</html>
